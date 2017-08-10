@@ -1,8 +1,8 @@
 package plan
 
 import (
-	"github.com/chrislusf/gleam/flow"
-	"github.com/chrislusf/gleam/pb"
+	"github.com/chrislusf/gleamold/flow"
+	"github.com/chrislusf/gleamold/pb"
 )
 
 func TranslateToInstructionSet(taskGroups *TaskGroup) (ret *pb.InstructionSet) {

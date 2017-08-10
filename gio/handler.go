@@ -28,9 +28,9 @@ var (
 )
 
 func init() {
-	flag.StringVar(&taskOption.Mapper, "gleam.mapper", "", "the generated mapper name")
-	flag.StringVar(&taskOption.Reducer, "gleam.reducer", "", "the generated reducer name")
-	flag.StringVar(&taskOption.KeyFields, "gleam.keyFields", "", "the 1-based key fields")
+	flag.StringVar(&taskOption.Mapper, "gleamold.mapper", "", "the generated mapper name")
+	flag.StringVar(&taskOption.Reducer, "gleamold.reducer", "", "the generated reducer name")
+	flag.StringVar(&taskOption.KeyFields, "gleamold.keyFields", "", "the 1-based key fields")
 }
 
 var (
@@ -94,7 +94,7 @@ func runMapperReducer() {
 
 	if taskOption.Reducer != "" {
 		if taskOption.KeyFields == "" {
-			log.Fatalf("Also expecting values for -gleam.keyFields! Actual arguments: %v", os.Args)
+			log.Fatalf("Also expecting values for -gleamold.keyFields! Actual arguments: %v", os.Args)
 		}
 		if fn, ok := reducers[taskOption.Reducer]; ok {
 

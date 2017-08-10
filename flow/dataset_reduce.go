@@ -6,8 +6,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/chrislusf/gleam/gio"
-	"github.com/chrislusf/gleam/script"
+	"github.com/chrislusf/gleamold/gio"
+	"github.com/chrislusf/gleamold/script"
 )
 
 func (d *Dataset) Reduce(code string) (ret *Dataset) {
@@ -82,8 +82,8 @@ func (d *Dataset) LocalReducerBy(reducerId gio.ReducerId, sortOptions ...*SortOp
 	var args []string
 	args = append(args, "./"+filepath.Base(os.Args[0]))
 	args = append(args, os.Args[1:]...)
-	args = append(args, "-gleam.reducer="+string(reducerId))
-	args = append(args, "-gleam.keyFields="+strings.Join(keyPositions, ","))
+	args = append(args, "-gleamold.reducer="+string(reducerId))
+	args = append(args, "-gleamold.keyFields="+strings.Join(keyPositions, ","))
 	commandLine := strings.Join(args, " ")
 
 	step.Command = script.NewShellScript().Pipe(commandLine).GetCommand()

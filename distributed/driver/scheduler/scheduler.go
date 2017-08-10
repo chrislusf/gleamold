@@ -7,8 +7,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/chrislusf/gleam/distributed/driver/scheduler/market"
-	"github.com/chrislusf/gleam/pb"
+	"github.com/chrislusf/gleamold/distributed/driver/scheduler/market"
+	"github.com/chrislusf/gleamold/pb"
 )
 
 type Scheduler struct {

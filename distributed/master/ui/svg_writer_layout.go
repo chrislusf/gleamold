@@ -1,7 +1,7 @@
 package ui
 
 import (
-	"github.com/chrislusf/gleam/pb"
+	"github.com/chrislusf/gleamold/pb"
 )
 
 // separate step groups into layers of step group ids via depencency analysis

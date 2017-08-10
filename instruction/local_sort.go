@@ -5,8 +5,8 @@ import (
 	"io"
 	"math"
 
-	"github.com/chrislusf/gleam/pb"
-	"github.com/chrislusf/gleam/util"
+	"github.com/chrislusf/gleamold/pb"
+	"github.com/chrislusf/gleamold/util"
 	"github.com/psilva261/timsort"
 )
 

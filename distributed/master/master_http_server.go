@@ -6,8 +6,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/chrislusf/gleam/distributed/master/ui"
-	"github.com/chrislusf/gleam/pb"
+	"github.com/chrislusf/gleamold/distributed/master/ui"
+	"github.com/chrislusf/gleamold/pb"
 	"github.com/gorilla/mux"
 	"github.com/hashicorp/golang-lru"
 )

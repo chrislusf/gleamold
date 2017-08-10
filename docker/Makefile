@@ -1,7 +1,7 @@
-BINARY = gleam
-SOURCE_DIR = github.com/chrislusf/gleam/distributed/gleam
+BINARY = gleamold
+SOURCE_DIR = github.com/chrislusf/gleamold/distributed/gleamold
 
-all: gleam
+all: gleamold
 
 .PHONY : clean deps docker run_docker
 
@@ -12,12 +12,12 @@ clean:
 deps:
 	go get $(GO_FLAGS) -d $(SOURCE_DIR)
 
-gleam: deps
+gleamold: deps
 	GOOS=linux GOARCH=amd64 go build -o $(BINARY) $(SOURCE_DIR)
 
-docker: gleam
+docker: gleamold
 	cp ../script/MessagePack.lua .
-	docker build -t chrislusf/gleam .
+	docker build -t chrislusf/gleamold .
 	rm MessagePack.lua
 	rm -f $(BINARY)
 

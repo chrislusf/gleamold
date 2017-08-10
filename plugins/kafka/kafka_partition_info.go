@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/Shopify/sarama"
-	"github.com/chrislusf/gleam/gio"
+	"github.com/chrislusf/gleamold/gio"
 )
 
 type KafkaPartitionInfo struct {

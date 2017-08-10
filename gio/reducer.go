@@ -5,7 +5,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/chrislusf/gleam/util"
+	"github.com/chrislusf/gleamold/util"
 )
 
 func ProcessReducer(f Reducer, keyPositions []int) (err error) {

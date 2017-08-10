@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	"github.com/ajstarks/svgo"
-	"github.com/chrislusf/gleam/pb"
+	"github.com/chrislusf/gleamold/pb"
 )
 
 var (

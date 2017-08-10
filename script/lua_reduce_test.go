@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/chrislusf/gleam/util"
+	"github.com/chrislusf/gleamold/util"
 )
 
 func TestLuaReduce(t *testing.T) {

@@ -1,6 +1,6 @@
 How to add a new input plugin
 
-1. follow an example, such as github.com/chrislusf/gleam/plugins/cassandra/*
+1. follow an example, such as github.com/chrislusf/gleamold/plugins/cassandra/*
 
 Usually a data set consists of many data shards.
 So an input plugin has 3 steps:

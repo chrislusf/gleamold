@@ -25,9 +25,9 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/chrislusf/gleam/filesystem"
-	"github.com/chrislusf/gleam/flow"
-	"github.com/chrislusf/gleam/util"
+	"github.com/chrislusf/gleamold/filesystem"
+	"github.com/chrislusf/gleamold/flow"
+	"github.com/chrislusf/gleamold/util"
 )
 
 type CsvSource struct {

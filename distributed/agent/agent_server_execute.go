@@ -8,7 +8,7 @@ import (
 	"os/exec"
 	"sync"
 
-	"github.com/chrislusf/gleam/pb"
+	"github.com/chrislusf/gleamold/pb"
 	"github.com/golang/protobuf/proto"
 	"github.com/kardianos/osext"
 )

@@ -5,8 +5,8 @@ import (
 	"io"
 	"io/ioutil"
 
-	"github.com/chrislusf/gleam/pb"
-	"github.com/chrislusf/gleam/util"
+	"github.com/chrislusf/gleamold/pb"
+	"github.com/chrislusf/gleamold/util"
 )
 
 func init() {

@@ -3,7 +3,7 @@ package flow
 import (
 	"log"
 
-	"github.com/chrislusf/gleam/script"
+	"github.com/chrislusf/gleamold/script"
 )
 
 // Init defines or declares variables or functions for the script.

@@ -14,10 +14,10 @@
 package plan
 
 import (
-	"github.com/chrislusf/gleam/sql/ast"
-	"github.com/chrislusf/gleam/sql/expression"
-	"github.com/chrislusf/gleam/sql/model"
-	"github.com/chrislusf/gleam/sql/util/types"
+	"github.com/chrislusf/gleamold/sql/ast"
+	"github.com/chrislusf/gleamold/sql/expression"
+	"github.com/chrislusf/gleamold/sql/model"
+	"github.com/chrislusf/gleamold/sql/util/types"
 	"github.com/juju/errors"
 )
 

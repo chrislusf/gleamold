@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/chrislusf/gleam/flow"
-	"github.com/chrislusf/gleam/util"
+	"github.com/chrislusf/gleamold/flow"
+	"github.com/chrislusf/gleamold/util"
 )
 
 func TestPipePerformance(t *testing.T) {
@@ -30,7 +30,7 @@ func testUnixPipeAsArgs() {
 		util.Range(0, 100),
 	).PipeAsArgs("echo foo bar $1").Fprintf(ioutil.Discard, "%s\n")
 
-	fmt.Printf("gleam pipe time diff: %s\n", time.Now().Sub(startTime))
+	fmt.Printf("gleamold pipe time diff: %s\n", time.Now().Sub(startTime))
 	fmt.Println()
 }
 

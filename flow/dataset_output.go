@@ -6,8 +6,8 @@ import (
 	"io"
 	"os"
 
-	"github.com/chrislusf/gleam/pb"
-	"github.com/chrislusf/gleam/util"
+	"github.com/chrislusf/gleamold/pb"
+	"github.com/chrislusf/gleamold/util"
 )
 
 // Output concurrently collects outputs from previous step to the driver.

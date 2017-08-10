@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/chrislusf/gleam/flow"
-	"github.com/chrislusf/gleam/util"
+	"github.com/chrislusf/gleamold/flow"
+	"github.com/chrislusf/gleamold/util"
 	"github.com/gocql/gocql"
 )
 

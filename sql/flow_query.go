@@ -3,13 +3,13 @@ package sql
 import (
 	"fmt"
 
-	"github.com/chrislusf/gleam/flow"
-	"github.com/chrislusf/gleam/sql/executor"
-	"github.com/chrislusf/gleam/sql/infoschema"
-	"github.com/chrislusf/gleam/sql/model"
-	"github.com/chrislusf/gleam/sql/parser"
-	"github.com/chrislusf/gleam/sql/plan"
-	"github.com/chrislusf/gleam/sql/util/types"
+	"github.com/chrislusf/gleamold/flow"
+	"github.com/chrislusf/gleamold/sql/executor"
+	"github.com/chrislusf/gleamold/sql/infoschema"
+	"github.com/chrislusf/gleamold/sql/model"
+	"github.com/chrislusf/gleamold/sql/parser"
+	"github.com/chrislusf/gleamold/sql/plan"
+	"github.com/chrislusf/gleamold/sql/util/types"
 )
 
 func RegisterTable(dataset *flow.Dataset, tableName string, columns []executor.TableColumn) {

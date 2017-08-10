@@ -5,11 +5,11 @@ import (
 	"os"
 	"testing"
 
-	"github.com/chrislusf/gleam/flow"
-	"github.com/chrislusf/gleam/sql"
-	"github.com/chrislusf/gleam/sql/executor"
-	"github.com/chrislusf/gleam/sql/mysql"
-	"github.com/chrislusf/gleam/sql/plan"
+	"github.com/chrislusf/gleamold/flow"
+	"github.com/chrislusf/gleamold/sql"
+	"github.com/chrislusf/gleamold/sql/executor"
+	"github.com/chrislusf/gleamold/sql/mysql"
+	"github.com/chrislusf/gleamold/sql/plan"
 )
 
 func TestLimitOffset(t *testing.T) {

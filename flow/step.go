@@ -4,9 +4,9 @@ import (
 	"io"
 	"log"
 
-	"github.com/chrislusf/gleam/instruction"
-	"github.com/chrislusf/gleam/pb"
-	"github.com/chrislusf/gleam/script"
+	"github.com/chrislusf/gleamold/instruction"
+	"github.com/chrislusf/gleamold/pb"
+	"github.com/chrislusf/gleamold/script"
 )
 
 func (fc *Flow) NewStep() (step *Step) {

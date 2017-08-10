@@ -7,7 +7,7 @@ import (
 	"os/exec"
 	"sync"
 
-	"github.com/chrislusf/gleam/pb"
+	"github.com/chrislusf/gleamold/pb"
 )
 
 // all data passing through pipe are all (size, msgpack_encoded) tuples

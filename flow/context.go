@@ -8,9 +8,9 @@ import (
 	"os"
 	"time"
 
-	"github.com/chrislusf/gleam/gio"
-	"github.com/chrislusf/gleam/script"
-	"github.com/chrislusf/gleam/util"
+	"github.com/chrislusf/gleamold/gio"
+	"github.com/chrislusf/gleamold/script"
+	"github.com/chrislusf/gleamold/util"
 )
 
 func New() (fc *Flow) {

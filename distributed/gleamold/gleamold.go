@@ -14,18 +14,18 @@ import (
 
 	kingpin "gopkg.in/alecthomas/kingpin.v2"
 
-	a "github.com/chrislusf/gleam/distributed/agent"
-	exe "github.com/chrislusf/gleam/distributed/executor"
-	m "github.com/chrislusf/gleam/distributed/master"
-	"github.com/chrislusf/gleam/distributed/netchan"
-	"github.com/chrislusf/gleam/pb"
-	"github.com/chrislusf/gleam/util"
-	"github.com/chrislusf/gleam/util/on_interrupt"
+	a "github.com/chrislusf/gleamold/distributed/agent"
+	exe "github.com/chrislusf/gleamold/distributed/executor"
+	m "github.com/chrislusf/gleamold/distributed/master"
+	"github.com/chrislusf/gleamold/distributed/netchan"
+	"github.com/chrislusf/gleamold/pb"
+	"github.com/chrislusf/gleamold/util"
+	"github.com/chrislusf/gleamold/util/on_interrupt"
 	"github.com/golang/protobuf/proto"
 )
 
 var (
-	app = kingpin.New("gleam", "distributed gleam, acts as master, agent, or executor")
+	app = kingpin.New("gleamold", "distributed gleamold, acts as master, agent, or executor")
 
 	master        = app.Command("master", "Start a master process")
 	masterAddress = master.Flag("address", "listening address host:port").Default(":45326").String()

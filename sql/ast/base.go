@@ -13,7 +13,7 @@
 
 package ast
 
-import "github.com/chrislusf/gleam/sql/util/types"
+import "github.com/chrislusf/gleamold/sql/util/types"
 
 // node is the struct implements node interface except for Accept method.
 // Node implementations should embed it in.

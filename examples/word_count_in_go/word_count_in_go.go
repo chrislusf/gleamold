@@ -4,9 +4,9 @@ import (
 	"flag"
 	"strings"
 
-	"github.com/chrislusf/gleam/distributed"
-	"github.com/chrislusf/gleam/flow"
-	"github.com/chrislusf/gleam/gio"
+	"github.com/chrislusf/gleamold/distributed"
+	"github.com/chrislusf/gleamold/flow"
+	"github.com/chrislusf/gleamold/gio"
 )
 
 var (

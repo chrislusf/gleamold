@@ -3,7 +3,7 @@ package scheduler
 import (
 	"log"
 
-	"github.com/chrislusf/gleam/pb"
+	"github.com/chrislusf/gleamold/pb"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 )

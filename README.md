@@ -1,9 +1,9 @@
 # Gleam
-[![Build Status](https://travis-ci.org/chrislusf/gleam.svg?branch=master)](https://travis-ci.org/chrislusf/gleam)
-[![GoDoc](https://godoc.org/github.com/chrislusf/gleam/flow?status.svg)](https://godoc.org/github.com/chrislusf/gleam/flow)
-[![Wiki](https://img.shields.io/badge/docs-wiki-blue.svg)](https://github.com/chrislusf/gleam/wiki)
-[![Go Report Card](https://goreportcard.com/badge/github.com/chrislusf/gleam)](https://goreportcard.com/report/github.com/chrislusf/gleam)
-[![codecov](https://codecov.io/gh/chrislusf/gleam/branch/master/graph/badge.svg)](https://codecov.io/gh/chrislusf/gleam)
+[![Build Status](https://travis-ci.org/chrislusf/gleamold.svg?branch=master)](https://travis-ci.org/chrislusf/gleamold)
+[![GoDoc](https://godoc.org/github.com/chrislusf/gleamold/flow?status.svg)](https://godoc.org/github.com/chrislusf/gleamold/flow)
+[![Wiki](https://img.shields.io/badge/docs-wiki-blue.svg)](https://github.com/chrislusf/gleamold/wiki)
+[![Go Report Card](https://goreportcard.com/badge/github.com/chrislusf/gleamold)](https://goreportcard.com/report/github.com/chrislusf/gleamold)
+[![codecov](https://codecov.io/gh/chrislusf/gleamold/branch/master/graph/badge.svg)](https://codecov.io/gh/chrislusf/gleamold)
 
 Gleam is a high performance and efficient distributed execution system, and also
 simple, generic, flexible and easy to customize.
@@ -75,10 +75,10 @@ The distributed mode has several names to explain: Master, Agent, Executor, Driv
 By leaving it in memory, the flow can have back pressure, and can support stream computation naturally.
 
 # Documentation
-* [Gleam Wiki](https://github.com/chrislusf/gleam/wiki)
-* [Installation](https://github.com/chrislusf/gleam/wiki/Installation)
-* [Gleam Flow API GoDoc](https://godoc.org/github.com/chrislusf/gleam/flow)
-* [gleam-dev on Slack](https://gleam-dev.slack.com)
+* [Gleam Wiki](https://github.com/chrislusf/gleamold/wiki)
+* [Installation](https://github.com/chrislusf/gleamold/wiki/Installation)
+* [Gleam Flow API GoDoc](https://godoc.org/github.com/chrislusf/gleamold/flow)
+* [gleamold-dev on Slack](https://gleamold-dev.slack.com)
 
 # Standalone Example
 
@@ -95,8 +95,8 @@ package main
 import (
 	"strings"
 
-	"github.com/chrislusf/gleam/flow"
-	"github.com/chrislusf/gleam/gio"
+	"github.com/chrislusf/gleamold/flow"
+	"github.com/chrislusf/gleamold/gio"
 )
 
 var (
@@ -140,7 +140,7 @@ func sum(x, y interface{}) (interface{}, error) {
 ```
 
 A more blown up example is here.
-https://github.com/chrislusf/gleam/blob/master/examples/word_count_in_go/word_count_in_go.go
+https://github.com/chrislusf/gleamold/blob/master/examples/word_count_in_go/word_count_in_go.go
 
 
 #### Word Count by LuaJIT
@@ -150,7 +150,7 @@ LuaJIT can greatly simplify the code. The full source code, not snippet, for wor
 package main
 
 import (
-	"github.com/chrislusf/gleam/flow"
+	"github.com/chrislusf/gleamold/flow"
 )
 
 func main() {
@@ -178,7 +178,7 @@ Another way to do the similar:
 package main
 
 import (
-	"github.com/chrislusf/gleam/flow"
+	"github.com/chrislusf/gleamold/flow"
 )
 
 func main() {
@@ -200,9 +200,9 @@ Assume there are file "a.csv" has fields "a1, a2, a3, a4, a5" and file "b.csv" h
 package main
 
 import (
-	. "github.com/chrislusf/gleam/flow"
-	"github.com/chrislusf/gleam/gio"
-	"github.com/chrislusf/gleam/plugins/csv"
+	. "github.com/chrislusf/gleamold/flow"
+	"github.com/chrislusf/gleamold/gio"
+	"github.com/chrislusf/gleamold/plugins/csv"
 )
 
 func main() {
@@ -234,7 +234,7 @@ import (
 	"log"
 	"path/filepath"
 
-	"github.com/chrislusf/gleam/flow"
+	"github.com/chrislusf/gleamold/flow"
 )
 
 func main() {
@@ -264,20 +264,20 @@ func main() {
 
 # Distributed Computing
 ## Setup Gleam Cluster Locally
-Start a gleam master and several gleam agents
+Start a gleamold master and several gleamold agents
 ```go
-// start "gleam master" on a server
-> go get github.com/chrislusf/gleam/distributed/gleam
-> gleam master --address=":45326"
+// start "gleamold master" on a server
+> go get github.com/chrislusf/gleamold/distributed/gleamold
+> gleamold master --address=":45326"
 
-// start up "gleam agent" on some different servers or ports
+// start up "gleamold agent" on some different servers or ports
 // if a different server, remember to install Luajit and copy the MessagePack.lua file also.
-> gleam agent --dir=2 --port 45327 --host=127.0.0.1
-> gleam agent --dir=3 --port 45328 --host=127.0.0.1
+> gleamold agent --dir=2 --port 45327 --host=127.0.0.1
+> gleamold agent --dir=3 --port 45328 --host=127.0.0.1
 ```
 
 ## Setup Gleam Cluster on Kubernetes
-Start a gleam master and several gleam agents
+Start a gleamold master and several gleamold agents
 ```bash
 kubectl apply -f k8s/
 ```
@@ -293,31 +293,31 @@ After the flow is defined, the Run() function can be executed in different ways:
   f.Run()
 
   // distributed mode
-  import "github.com/chrislusf/gleam/distributed"
+  import "github.com/chrislusf/gleamold/distributed"
   f.Run(distributed.Option())
   f.Run(distributed.Option().SetMaster("master_ip:45326"))
 
   // distributed planner mode to print out logic plan
-  import "github.com/chrislusf/gleam/distributed"
+  import "github.com/chrislusf/gleamold/distributed"
   f.Run(distributed.Planner())
 
 ```
 # Write Mapper Reducer in Go
 
-LuaJIT is easy, but sometimes we really need to write in Go. It is a bit more complicated, but not much. Gleam allows us to write a simple Go code with mapper or reducer logic, and automatically send it over to Gleam agents to execute. See https://github.com/chrislusf/gleam/wiki/Write-Mapper-Reducer-in-Go
+LuaJIT is easy, but sometimes we really need to write in Go. It is a bit more complicated, but not much. Gleam allows us to write a simple Go code with mapper or reducer logic, and automatically send it over to Gleam agents to execute. See https://github.com/chrislusf/gleamold/wiki/Write-Mapper-Reducer-in-Go
 
 # Important Features
 
-* Fault tolerant [OnDisk()](https://godoc.org/github.com/chrislusf/gleam/flow#Dataset.OnDisk).
+* Fault tolerant [OnDisk()](https://godoc.org/github.com/chrislusf/gleamold/flow#Dataset.OnDisk).
 * Read data from Local, HDFS, or S3.
 * Data Sources
-  * [Cassandra](https://github.com/chrislusf/gleam/tree/master/plugins/cassandra), with [example](https://github.com/chrislusf/gleam/tree/master/examples/cassandra_reader)
-  * [Kafka](https://github.com/chrislusf/gleam/tree/master/plugins/kafka)
+  * [Cassandra](https://github.com/chrislusf/gleamold/tree/master/plugins/cassandra), with [example](https://github.com/chrislusf/gleamold/tree/master/examples/cassandra_reader)
+  * [Kafka](https://github.com/chrislusf/gleamold/tree/master/plugins/kafka)
   * Raw Socket
 
 # Status
 Gleam is just beginning. Here are a few todo items. Welcome any help!
-* [Add new plugin to read external data](https://github.com/chrislusf/gleam/wiki/Add-New-Source).
+* [Add new plugin to read external data](https://github.com/chrislusf/gleamold/wiki/Add-New-Source).
 * Add schema support for each dataset.
 * Support using SQL as a flow step, similar to LINQ.
 * Add windowing functions similar to Apache Beam/Flink.

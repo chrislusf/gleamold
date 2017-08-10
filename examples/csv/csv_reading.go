@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/chrislusf/gleam/distributed"
-	. "github.com/chrislusf/gleam/flow"
-	"github.com/chrislusf/gleam/gio"
-	"github.com/chrislusf/gleam/plugins/csv"
+	"github.com/chrislusf/gleamold/distributed"
+	. "github.com/chrislusf/gleamold/flow"
+	"github.com/chrislusf/gleamold/gio"
+	"github.com/chrislusf/gleamold/plugins/csv"
 )
 
 func main() {

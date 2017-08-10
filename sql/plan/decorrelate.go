@@ -14,8 +14,8 @@
 package plan
 
 import (
-	"github.com/chrislusf/gleam/sql/expression"
-	"github.com/chrislusf/gleam/sql/util/types"
+	"github.com/chrislusf/gleamold/sql/expression"
+	"github.com/chrislusf/gleamold/sql/util/types"
 )
 
 // extractCorColumnsBySchema only extracts the correlated columns that match the outer plan's schema.

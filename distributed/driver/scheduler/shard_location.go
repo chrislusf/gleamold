@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"sync"
 
-	"github.com/chrislusf/gleam/flow"
-	"github.com/chrislusf/gleam/pb"
+	"github.com/chrislusf/gleamold/flow"
+	"github.com/chrislusf/gleamold/pb"
 )
 
 type DatasetShardLocator struct {

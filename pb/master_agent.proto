@@ -144,7 +144,7 @@ message FlowExecutionStatus {
 service GleamAgent {
   rpc SendFileResource(stream FileResourceRequest) returns (stream FileResourceResponse) {}
   rpc Execute(ExecutionRequest) returns (stream ExecutionResponse) {}
-  // collect execution stats from "gleam execute" processes
+  // collect execution stats from "gleamold execute" processes
   rpc CollectExecutionStatistics(stream ExecutionStat) returns (Empty) {}
   rpc Delete(DeleteDatasetShardRequest) returns (DeleteDatasetShardResponse) {}
 }

@@ -5,7 +5,7 @@ import (
 	"math/rand"
 	"sort"
 
-	"github.com/chrislusf/gleam/pb"
+	"github.com/chrislusf/gleamold/pb"
 )
 
 func (t *Topology) allocateDataCenter(requests []*pb.ComputeResource) (string, error) {

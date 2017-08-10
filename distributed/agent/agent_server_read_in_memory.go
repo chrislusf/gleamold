@@ -6,7 +6,7 @@ import (
 	"log"
 	"net"
 
-	"github.com/chrislusf/gleam/util"
+	"github.com/chrislusf/gleamold/util"
 )
 
 func (as *AgentServer) handleInMemoryReadConnection(conn net.Conn, readerName, channelName string) {

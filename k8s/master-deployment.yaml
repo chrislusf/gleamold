@@ -4,7 +4,7 @@ metadata:
   labels:
     service: master
   name: master
-  namespace: gleam
+  namespace: gleamold
 spec:
   replicas: 1
   selector:
@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: master
-        image: chrislusf/gleam
+        image: chrislusf/gleamold
         ports:
         - containerPort: 45326
           protocol: TCP

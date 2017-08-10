@@ -5,8 +5,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/chrislusf/gleam/gio"
-	"github.com/chrislusf/gleam/script"
+	"github.com/chrislusf/gleamold/gio"
+	"github.com/chrislusf/gleamold/script"
 )
 
 // Map operates on each row, and the returned results are passed to next dataset.
@@ -30,7 +30,7 @@ func (d *Dataset) Mapper(mapperId gio.MapperId) *Dataset {
 	var args []string
 	args = append(args, "./"+filepath.Base(os.Args[0]))
 	// args = append(args, os.Args[1:]...) // empty string in an arg can fail the execution
-	args = append(args, "-gleam.mapper="+string(mapperId))
+	args = append(args, "-gleamold.mapper="+string(mapperId))
 	commandLine := strings.Join(args, " ")
 	// println("args:", commandLine)
 	step.Command = script.NewShellScript().Pipe(commandLine).GetCommand()

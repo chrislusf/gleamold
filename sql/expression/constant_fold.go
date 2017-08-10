@@ -15,7 +15,7 @@ package expression
 
 import (
 	"log"
-	"github.com/chrislusf/gleam/sql/context"
+	"github.com/chrislusf/gleamold/sql/context"
 )
 
 // FoldConstant does constant folding optimization on an expression.

@@ -3,10 +3,10 @@ package executor
 import (
 	"fmt"
 
-	"github.com/chrislusf/gleam/sql/context"
-	"github.com/chrislusf/gleam/sql/infoschema"
-	"github.com/chrislusf/gleam/sql/model"
-	"github.com/chrislusf/gleam/sql/plan"
+	"github.com/chrislusf/gleamold/sql/context"
+	"github.com/chrislusf/gleamold/sql/infoschema"
+	"github.com/chrislusf/gleamold/sql/model"
+	"github.com/chrislusf/gleamold/sql/plan"
 )
 
 // executorBuilder builds an Executor from a Plan.

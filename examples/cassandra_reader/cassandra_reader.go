@@ -3,10 +3,10 @@ package main
 import (
 	"flag"
 
-	"github.com/chrislusf/gleam/distributed"
-	"github.com/chrislusf/gleam/flow"
-	"github.com/chrislusf/gleam/gio"
-	"github.com/chrislusf/gleam/plugins/cassandra"
+	"github.com/chrislusf/gleamold/distributed"
+	"github.com/chrislusf/gleamold/flow"
+	"github.com/chrislusf/gleamold/gio"
+	"github.com/chrislusf/gleamold/plugins/cassandra"
 )
 
 var (

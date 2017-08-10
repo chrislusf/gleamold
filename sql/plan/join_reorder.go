@@ -17,8 +17,8 @@ import (
 	"sort"
 
 	"log"
-	"github.com/chrislusf/gleam/sql/ast"
-	"github.com/chrislusf/gleam/sql/expression"
+	"github.com/chrislusf/gleamold/sql/ast"
+	"github.com/chrislusf/gleamold/sql/expression"
 )
 
 // tryToGetJoinGroup tries to fetch a whole join group, which all joins is cartesian join.

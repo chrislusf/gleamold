@@ -14,7 +14,7 @@
 package plan
 
 import (
-	"github.com/chrislusf/gleam/sql/ast"
+	"github.com/chrislusf/gleamold/sql/ast"
 )
 
 // AggregateFuncExtractor visits Expr tree.

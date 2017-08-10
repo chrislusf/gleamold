@@ -14,8 +14,8 @@
 package plan
 
 import (
-	"github.com/chrislusf/gleam/sql/expression"
-	"github.com/chrislusf/gleam/sql/mysql"
+	"github.com/chrislusf/gleamold/sql/expression"
+	"github.com/chrislusf/gleamold/sql/mysql"
 )
 
 func (p *Aggregation) buildKeyInfo() {

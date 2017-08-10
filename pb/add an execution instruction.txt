@@ -18,5 +18,5 @@ Taking adding InputSplitReader as example:
     make
 
 
-4. in github.com/chrislusf/gleam/instruction
+4. in github.com/chrislusf/gleamold/instruction
 	add an instruction following the Instruction interface.

@@ -5,7 +5,7 @@ import (
 	"log"
 	"path/filepath"
 
-	"github.com/chrislusf/gleam/flow"
+	"github.com/chrislusf/gleamold/flow"
 )
 
 func main() {

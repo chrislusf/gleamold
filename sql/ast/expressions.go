@@ -16,10 +16,10 @@ package ast
 import (
 	"regexp"
 
-	"github.com/chrislusf/gleam/sql/context"
-	"github.com/chrislusf/gleam/sql/model"
-	"github.com/chrislusf/gleam/sql/parser/opcode"
-	"github.com/chrislusf/gleam/sql/util/types"
+	"github.com/chrislusf/gleamold/sql/context"
+	"github.com/chrislusf/gleamold/sql/model"
+	"github.com/chrislusf/gleamold/sql/parser/opcode"
+	"github.com/chrislusf/gleamold/sql/util/types"
 )
 
 var (

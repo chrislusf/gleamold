@@ -16,7 +16,7 @@ package expression
 import (
 	"strings"
 
-	"github.com/chrislusf/gleam/sql/ast"
+	"github.com/chrislusf/gleamold/sql/ast"
 	"github.com/juju/errors"
 )
 

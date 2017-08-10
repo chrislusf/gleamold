@@ -8,10 +8,10 @@ import (
 	"runtime/pprof"
 	"time"
 
-	"github.com/chrislusf/gleam/distributed"
-	"github.com/chrislusf/gleam/flow"
-	"github.com/chrislusf/gleam/gio"
-	"github.com/chrislusf/gleam/util"
+	"github.com/chrislusf/gleamold/distributed"
+	"github.com/chrislusf/gleamold/flow"
+	"github.com/chrislusf/gleamold/gio"
+	"github.com/chrislusf/gleamold/util"
 	glow "github.com/chrislusf/glow/flow"
 )
 
@@ -33,7 +33,7 @@ func main() {
 	pprof.StartCPUProfile(f)
 	defer pprof.StopCPUProfile()
 
-	// uncomment this line if you setup the gleam master and agents
+	// uncomment this line if you setup the gleamold master and agents
 	testPureGoGleam("distributed parallel 7", false)
 	testPureGoGleam("local mode parallel 7", true)
 
@@ -75,7 +75,7 @@ func testGleam(name string, isLocal bool) {
 	}
 
 	fmt.Printf("pi = %f\n", 4.0*float64(count)/float64(times))
-	fmt.Printf("gleam %s time cost: %s\n", name, time.Now().Sub(startTime))
+	fmt.Printf("gleamold %s time cost: %s\n", name, time.Now().Sub(startTime))
 	fmt.Println()
 }
 
@@ -97,7 +97,7 @@ func testPureGoGleam(name string, isLocal bool) {
 	}
 
 	fmt.Printf("pi = %f\n", 4.0*float64(count)/float64(times))
-	fmt.Printf("pure go gleam %s time cost: %s\n", name, time.Now().Sub(startTime))
+	fmt.Printf("pure go gleamold %s time cost: %s\n", name, time.Now().Sub(startTime))
 	fmt.Println()
 }
 func testDirectGo() {

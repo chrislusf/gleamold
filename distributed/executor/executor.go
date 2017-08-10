@@ -10,10 +10,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/chrislusf/gleam/distributed/netchan"
-	"github.com/chrislusf/gleam/instruction"
-	"github.com/chrislusf/gleam/pb"
-	"github.com/chrislusf/gleam/util"
+	"github.com/chrislusf/gleamold/distributed/netchan"
+	"github.com/chrislusf/gleamold/instruction"
+	"github.com/chrislusf/gleamold/pb"
+	"github.com/chrislusf/gleamold/util"
 )
 
 type ExecutorOption struct {

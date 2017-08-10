@@ -18,10 +18,10 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/chrislusf/gleam/sql/context"
-	"github.com/chrislusf/gleam/sql/expression"
-	"github.com/chrislusf/gleam/sql/util/codec"
-	"github.com/chrislusf/gleam/sql/util/types"
+	"github.com/chrislusf/gleamold/sql/context"
+	"github.com/chrislusf/gleamold/sql/expression"
+	"github.com/chrislusf/gleamold/sql/util/codec"
+	"github.com/chrislusf/gleamold/sql/util/types"
 	"github.com/juju/errors"
 )
 

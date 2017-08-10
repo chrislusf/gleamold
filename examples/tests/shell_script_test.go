@@ -4,7 +4,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/chrislusf/gleam/flow"
+	"github.com/chrislusf/gleamold/flow"
 )
 
 func TestCallingShellScripts(t *testing.T) {

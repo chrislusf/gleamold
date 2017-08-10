@@ -1,7 +1,7 @@
 package flow
 
 import (
-	"github.com/chrislusf/gleam/instruction"
+	"github.com/chrislusf/gleamold/instruction"
 )
 
 // CoGroup joins two datasets by the key,

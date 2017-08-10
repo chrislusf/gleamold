@@ -18,7 +18,7 @@ import (
 	"time"
 
 	"github.com/juju/errors"
-	"github.com/chrislusf/gleam/sql/util/types"
+	"github.com/chrislusf/gleamold/sql/util/types"
 )
 
 // First byte in the encoded value which specifies the encoding type.

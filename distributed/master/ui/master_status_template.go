@@ -14,7 +14,7 @@ var MasterStatusTpl = template.Must(template.New("master").Parse(`<!DOCTYPE html
     <div class="container">
       <div class="page-header">
 	    <h1>
-          <a href="https://github.com/chrislusf/gleam">Gleam</a> <small>{{ .Version }}</small>
+          <a href="https://github.com/chrislusf/gleamold">Gleam</a> <small>{{ .Version }}</small>
 	    </h1>
       </div>
 

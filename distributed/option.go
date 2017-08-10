@@ -3,9 +3,9 @@ package distributed
 import (
 	"path/filepath"
 
-	"github.com/chrislusf/gleam/distributed/driver"
-	"github.com/chrislusf/gleam/distributed/resource"
-	"github.com/chrislusf/gleam/flow"
+	"github.com/chrislusf/gleamold/distributed/driver"
+	"github.com/chrislusf/gleamold/distributed/resource"
+	"github.com/chrislusf/gleamold/flow"
 )
 
 type DistributedOption struct {
@@ -49,8 +49,8 @@ func (o *DistributedOption) SetMaster(master string) *DistributedOption {
 	return o
 }
 
-// WithFile sends any related file over to gleam agents
-// so the task can still access these files on gleam agents.
+// WithFile sends any related file over to gleamold agents
+// so the task can still access these files on gleamold agents.
 // The files are placed on the executed task's current working directory.
 func (o *DistributedOption) WithFile(relatedFile, toFolder string) *DistributedOption {
 	relativePath, err := filepath.Rel(".", relatedFile)

@@ -21,10 +21,10 @@ import (
 	"time"
 
 	"github.com/juju/errors"
-	"github.com/chrislusf/gleam/sql/mysql"
-	"github.com/chrislusf/gleam/sql/sessionctx/variable"
-	"github.com/chrislusf/gleam/sql/util/charset"
-	"github.com/chrislusf/gleam/sql/util/hack"
+	"github.com/chrislusf/gleamold/sql/mysql"
+	"github.com/chrislusf/gleamold/sql/sessionctx/variable"
+	"github.com/chrislusf/gleamold/sql/util/charset"
+	"github.com/chrislusf/gleamold/sql/util/hack"
 )
 
 // Kind constants.

@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/chrislusf/gleam/pb"
+	"github.com/chrislusf/gleamold/pb"
 	"github.com/golang/protobuf/proto"
 	"github.com/hashicorp/golang-lru"
 	"golang.org/x/net/context"

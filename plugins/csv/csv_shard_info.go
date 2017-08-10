@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/chrislusf/gleam/filesystem"
-	"github.com/chrislusf/gleam/gio"
+	"github.com/chrislusf/gleamold/filesystem"
+	"github.com/chrislusf/gleamold/gio"
 )
 
 type CsvShardInfo struct {

@@ -1,8 +1,8 @@
 # This is an optional file.
 #
 # This file is loaded from these folders:
-# 1. /etc/gleam/
-# 2. $HOME/.gleam/
+# 1. /etc/gleamold/
+# 2. $HOME/.gleamold/
 # 3. The program's current folder.
 #
 #

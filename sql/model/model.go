@@ -16,7 +16,7 @@ package model
 import (
 	"strings"
 
-	"github.com/chrislusf/gleam/sql/util/types"
+	"github.com/chrislusf/gleamold/sql/util/types"
 )
 
 // ColumnInfo provides meta data describing of a table column.

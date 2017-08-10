@@ -18,7 +18,7 @@ EXPOSE 45326
 
 VOLUME /data
 
-COPY gleam /usr/bin/
+COPY gleamold /usr/bin/
 COPY MessagePack.lua /usr/local/share/luajit-$LUAJIT_VERSION/
 COPY entrypoint.sh /entrypoint.sh
 

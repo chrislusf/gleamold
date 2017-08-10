@@ -3,7 +3,7 @@ package distributed
 import (
 	"testing"
 
-	"github.com/chrislusf/gleam/flow"
+	"github.com/chrislusf/gleamold/flow"
 )
 
 func TestPlanning(t *testing.T) {

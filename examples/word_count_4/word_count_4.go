@@ -8,8 +8,8 @@ import (
 	"path/filepath"
 	"runtime/pprof"
 
-	"github.com/chrislusf/gleam/flow"
-	"github.com/chrislusf/gleam/util/on_interrupt"
+	"github.com/chrislusf/gleamold/flow"
+	"github.com/chrislusf/gleamold/util/on_interrupt"
 )
 
 var (

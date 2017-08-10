@@ -7,9 +7,9 @@ import (
 	"log"
 	"net"
 
-	"github.com/chrislusf/gleam/filesystem"
-	"github.com/chrislusf/gleam/pb"
-	"github.com/chrislusf/gleam/util"
+	"github.com/chrislusf/gleamold/filesystem"
+	"github.com/chrislusf/gleamold/pb"
+	"github.com/chrislusf/gleamold/util"
 )
 
 type Sourcer interface {

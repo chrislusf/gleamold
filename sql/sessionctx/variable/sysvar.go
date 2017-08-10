@@ -16,8 +16,8 @@ package variable
 import (
 	"strings"
 
-	"github.com/chrislusf/gleam/sql/mysql"
-	"github.com/chrislusf/gleam/sql/terror"
+	"github.com/chrislusf/gleamold/sql/mysql"
+	"github.com/chrislusf/gleamold/sql/terror"
 )
 
 // ScopeFlag is for system variable whether can be changed in global/session dynamically or not.

@@ -15,8 +15,8 @@ package plan
 
 import (
 	"log"
-	"github.com/chrislusf/gleam/sql/ast"
-	"github.com/chrislusf/gleam/sql/expression"
+	"github.com/chrislusf/gleamold/sql/ast"
+	"github.com/chrislusf/gleamold/sql/expression"
 )
 
 func getUsedList(usedCols []*expression.Column, schema expression.Schema) []bool {

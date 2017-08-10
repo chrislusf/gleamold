@@ -3,7 +3,7 @@ package plan
 import (
 	"log"
 
-	"github.com/chrislusf/gleam/flow"
+	"github.com/chrislusf/gleamold/flow"
 )
 
 func isMergeableDataset(ds *flow.Dataset, taskCount int) bool {

@@ -4,7 +4,7 @@ metadata:
   labels:
     service: agent
   name: agent
-  namespace: gleam
+  namespace: gleamold
 spec:
   replicas: 3
   selector:
@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: agent
-        image: chrislusf/gleam
+        image: chrislusf/gleamold
         resources:
           limits:
             memory: "2Gi"

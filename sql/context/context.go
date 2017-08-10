@@ -16,7 +16,7 @@ package context
 import (
 	"fmt"
 
-	"github.com/chrislusf/gleam/sql/sessionctx/variable"
+	"github.com/chrislusf/gleamold/sql/sessionctx/variable"
 )
 
 // Context is an interface for transaction and executive args environment.

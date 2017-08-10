@@ -1966,7 +1966,7 @@ var _GleamMaster_serviceDesc = grpc.ServiceDesc{
 type GleamAgentClient interface {
 	SendFileResource(ctx context.Context, opts ...grpc.CallOption) (GleamAgent_SendFileResourceClient, error)
 	Execute(ctx context.Context, in *ExecutionRequest, opts ...grpc.CallOption) (GleamAgent_ExecuteClient, error)
-	// collect execution stats from "gleam execute" processes
+	// collect execution stats from "gleamold execute" processes
 	CollectExecutionStatistics(ctx context.Context, opts ...grpc.CallOption) (GleamAgent_CollectExecutionStatisticsClient, error)
 	Delete(ctx context.Context, in *DeleteDatasetShardRequest, opts ...grpc.CallOption) (*DeleteDatasetShardResponse, error)
 }
@@ -2090,7 +2090,7 @@ func (c *gleamAgentClient) Delete(ctx context.Context, in *DeleteDatasetShardReq
 type GleamAgentServer interface {
 	SendFileResource(GleamAgent_SendFileResourceServer) error
 	Execute(*ExecutionRequest, GleamAgent_ExecuteServer) error
-	// collect execution stats from "gleam execute" processes
+	// collect execution stats from "gleamold execute" processes
 	CollectExecutionStatistics(GleamAgent_CollectExecutionStatisticsServer) error
 	Delete(context.Context, *DeleteDatasetShardRequest) (*DeleteDatasetShardResponse, error)
 }

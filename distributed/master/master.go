@@ -7,7 +7,7 @@ import (
 	"net"
 	"net/http"
 
-	"github.com/chrislusf/gleam/pb"
+	"github.com/chrislusf/gleamold/pb"
 	router "github.com/gorilla/mux"
 	"github.com/soheilhy/cmux"
 	"google.golang.org/grpc"

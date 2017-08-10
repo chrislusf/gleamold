@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/chrislusf/gleam/flow"
+	"github.com/chrislusf/gleamold/flow"
 )
 
 func main() {

@@ -10,8 +10,8 @@ import (
 	"path/filepath"
 	"sync"
 
-	"github.com/chrislusf/gleam/distributed/resource"
-	"github.com/chrislusf/gleam/pb"
+	"github.com/chrislusf/gleamold/distributed/resource"
+	"github.com/chrislusf/gleamold/pb"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 )
@@ -111,7 +111,7 @@ func (as *AgentServer) Execute(request *pb.ExecutionRequest, stream pb.GleamAgen
 
 }
 
-// Collect stat from "gleam execute" process
+// Collect stat from "gleamold execute" process
 func (as *AgentServer) CollectExecutionStatistics(stream pb.GleamAgent_CollectExecutionStatisticsServer) error {
 	var statsChan chan *pb.ExecutionStat
 

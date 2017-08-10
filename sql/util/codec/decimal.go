@@ -16,7 +16,7 @@ package codec
 import (
 	"log"
 
-	"github.com/chrislusf/gleam/sql/util/types"
+	"github.com/chrislusf/gleamold/sql/util/types"
 	"github.com/juju/errors"
 )
 

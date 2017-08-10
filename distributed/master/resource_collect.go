@@ -3,7 +3,7 @@ package master
 import (
 	"time"
 
-	"github.com/chrislusf/gleam/pb"
+	"github.com/chrislusf/gleamold/pb"
 )
 
 func (l *Topology) UpdateAgentInformation(ai *pb.Heartbeat) {
