@@ -14,7 +14,7 @@ import (
 )
 
 func (as *AgentServer) executeCommand(
-	stream pb.GleamAgent_ExecuteServer,
+	stream pb.GleamoldAgent_ExecuteServer,
 	startRequest *pb.ExecutionRequest,
 	dir string,
 	statChan chan *pb.ExecutionStat,
@@ -110,7 +110,7 @@ func (as *AgentServer) executeCommand(
 
 }
 
-func streamOutput(wg *sync.WaitGroup, stream pb.GleamAgent_ExecuteServer, reader io.Reader) error {
+func streamOutput(wg *sync.WaitGroup, stream pb.GleamoldAgent_ExecuteServer, reader io.Reader) error {
 
 	defer wg.Done()
 
@@ -135,7 +135,7 @@ func streamOutput(wg *sync.WaitGroup, stream pb.GleamAgent_ExecuteServer, reader
 	}
 }
 
-func streamError(wg *sync.WaitGroup, stream pb.GleamAgent_ExecuteServer, reader io.Reader) error {
+func streamError(wg *sync.WaitGroup, stream pb.GleamoldAgent_ExecuteServer, reader io.Reader) error {
 
 	defer wg.Done()
 
@@ -165,7 +165,7 @@ func streamError(wg *sync.WaitGroup, stream pb.GleamAgent_ExecuteServer, reader 
 func streamPulse(wg *sync.WaitGroup,
 	stopChan chan bool,
 	statChan chan *pb.ExecutionStat,
-	stream pb.GleamAgent_ExecuteServer) error {
+	stream pb.GleamoldAgent_ExecuteServer) error {
 
 	defer wg.Done()
 
@@ -183,7 +183,7 @@ func streamPulse(wg *sync.WaitGroup,
 	}
 }
 
-func sendExitStats(stream pb.GleamAgent_ExecuteServer, cmd *exec.Cmd) error {
+func sendExitStats(stream pb.GleamoldAgent_ExecuteServer, cmd *exec.Cmd) error {
 	if cmd.ProcessState != nil {
 		if sendErr := stream.Send(&pb.ExecutionResponse{
 			SystemTime: cmd.ProcessState.SystemTime().Seconds(),

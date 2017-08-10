@@ -14,7 +14,7 @@ var JobStatusTpl = template.Must(template.New("job").Funcs(funcMap).Parse(`<!DOC
     <div class="container">
       <div class="page-header">
 	    <h1>
-          <a href="https://github.com/chrislusf/gleamold">Gleam</a> <small>{{ .Version }}</small>
+          <a href="https://github.com/chrislusf/gleamold">Gleamold</a> <small>{{ .Version }}</small>
 	    </h1>
       </div>
 

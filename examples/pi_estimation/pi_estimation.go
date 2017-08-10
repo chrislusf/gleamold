@@ -34,11 +34,11 @@ func main() {
 	defer pprof.StopCPUProfile()
 
 	// uncomment this line if you setup the gleamold master and agents
-	testPureGoGleam("distributed parallel 7", false)
-	testPureGoGleam("local mode parallel 7", true)
+	testPureGoGleamold("distributed parallel 7", false)
+	testPureGoGleamold("local mode parallel 7", true)
 
-	testGleam("distributed parallel 7", false)
-	testGleam("local mode parallel 7", true)
+	testGleamold("distributed parallel 7", false)
+	testGleamold("local mode parallel 7", true)
 
 	testDirectGo()
 	testLuajit()
@@ -47,7 +47,7 @@ func main() {
 	testLocalFlow()
 }
 
-func testGleam(name string, isLocal bool) {
+func testGleamold(name string, isLocal bool) {
 	var count int64
 	startTime := time.Now()
 	f := flow.New().Init(`
@@ -79,7 +79,7 @@ func testGleam(name string, isLocal bool) {
 	fmt.Println()
 }
 
-func testPureGoGleam(name string, isLocal bool) {
+func testPureGoGleamold(name string, isLocal bool) {
 	var count int64
 	startTime := time.Now()
 	f := flow.New().Init(`

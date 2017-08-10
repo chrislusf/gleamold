@@ -7,14 +7,14 @@ import (
 var MasterStatusTpl = template.Must(template.New("master").Parse(`<!DOCTYPE html>
 <html>
   <head>
-    <title>Gleam {{ .Version }}</title>
+    <title>Gleamold {{ .Version }}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   </head>
   <body>
     <div class="container">
       <div class="page-header">
 	    <h1>
-          <a href="https://github.com/chrislusf/gleamold">Gleam</a> <small>{{ .Version }}</small>
+          <a href="https://github.com/chrislusf/gleamold">Gleamold</a> <small>{{ .Version }}</small>
 	    </h1>
       </div>
 

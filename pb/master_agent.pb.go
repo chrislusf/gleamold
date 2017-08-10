@@ -1762,33 +1762,33 @@ var _ grpc.ClientConn
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion4
 
-// Client API for GleamMaster service
+// Client API for GleamoldMaster service
 
-type GleamMasterClient interface {
+type GleamoldMasterClient interface {
 	GetResources(ctx context.Context, in *ComputeRequest, opts ...grpc.CallOption) (*AllocationResult, error)
-	SendHeartbeat(ctx context.Context, opts ...grpc.CallOption) (GleamMaster_SendHeartbeatClient, error)
-	SendFlowExecutionStatus(ctx context.Context, opts ...grpc.CallOption) (GleamMaster_SendFlowExecutionStatusClient, error)
+	SendHeartbeat(ctx context.Context, opts ...grpc.CallOption) (GleamoldMaster_SendHeartbeatClient, error)
+	SendFlowExecutionStatus(ctx context.Context, opts ...grpc.CallOption) (GleamoldMaster_SendFlowExecutionStatusClient, error)
 }
 
 type gleamMasterClient struct {
 	cc *grpc.ClientConn
 }
 
-func NewGleamMasterClient(cc *grpc.ClientConn) GleamMasterClient {
+func NewGleamoldMasterClient(cc *grpc.ClientConn) GleamoldMasterClient {
 	return &gleamMasterClient{cc}
 }
 
 func (c *gleamMasterClient) GetResources(ctx context.Context, in *ComputeRequest, opts ...grpc.CallOption) (*AllocationResult, error) {
 	out := new(AllocationResult)
-	err := grpc.Invoke(ctx, "/pb.GleamMaster/GetResources", in, out, c.cc, opts...)
+	err := grpc.Invoke(ctx, "/pb.GleamoldMaster/GetResources", in, out, c.cc, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *gleamMasterClient) SendHeartbeat(ctx context.Context, opts ...grpc.CallOption) (GleamMaster_SendHeartbeatClient, error) {
-	stream, err := grpc.NewClientStream(ctx, &_GleamMaster_serviceDesc.Streams[0], c.cc, "/pb.GleamMaster/SendHeartbeat", opts...)
+func (c *gleamMasterClient) SendHeartbeat(ctx context.Context, opts ...grpc.CallOption) (GleamoldMaster_SendHeartbeatClient, error) {
+	stream, err := grpc.NewClientStream(ctx, &_GleamoldMaster_serviceDesc.Streams[0], c.cc, "/pb.GleamoldMaster/SendHeartbeat", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1796,7 +1796,7 @@ func (c *gleamMasterClient) SendHeartbeat(ctx context.Context, opts ...grpc.Call
 	return x, nil
 }
 
-type GleamMaster_SendHeartbeatClient interface {
+type GleamoldMaster_SendHeartbeatClient interface {
 	Send(*Heartbeat) error
 	CloseAndRecv() (*Empty, error)
 	grpc.ClientStream
@@ -1821,8 +1821,8 @@ func (x *gleamMasterSendHeartbeatClient) CloseAndRecv() (*Empty, error) {
 	return m, nil
 }
 
-func (c *gleamMasterClient) SendFlowExecutionStatus(ctx context.Context, opts ...grpc.CallOption) (GleamMaster_SendFlowExecutionStatusClient, error) {
-	stream, err := grpc.NewClientStream(ctx, &_GleamMaster_serviceDesc.Streams[1], c.cc, "/pb.GleamMaster/SendFlowExecutionStatus", opts...)
+func (c *gleamMasterClient) SendFlowExecutionStatus(ctx context.Context, opts ...grpc.CallOption) (GleamoldMaster_SendFlowExecutionStatusClient, error) {
+	stream, err := grpc.NewClientStream(ctx, &_GleamoldMaster_serviceDesc.Streams[1], c.cc, "/pb.GleamoldMaster/SendFlowExecutionStatus", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1830,7 +1830,7 @@ func (c *gleamMasterClient) SendFlowExecutionStatus(ctx context.Context, opts ..
 	return x, nil
 }
 
-type GleamMaster_SendFlowExecutionStatusClient interface {
+type GleamoldMaster_SendFlowExecutionStatusClient interface {
 	Send(*FlowExecutionStatus) error
 	CloseAndRecv() (*Empty, error)
 	grpc.ClientStream
@@ -1855,41 +1855,41 @@ func (x *gleamMasterSendFlowExecutionStatusClient) CloseAndRecv() (*Empty, error
 	return m, nil
 }
 
-// Server API for GleamMaster service
+// Server API for GleamoldMaster service
 
-type GleamMasterServer interface {
+type GleamoldMasterServer interface {
 	GetResources(context.Context, *ComputeRequest) (*AllocationResult, error)
-	SendHeartbeat(GleamMaster_SendHeartbeatServer) error
-	SendFlowExecutionStatus(GleamMaster_SendFlowExecutionStatusServer) error
+	SendHeartbeat(GleamoldMaster_SendHeartbeatServer) error
+	SendFlowExecutionStatus(GleamoldMaster_SendFlowExecutionStatusServer) error
 }
 
-func RegisterGleamMasterServer(s *grpc.Server, srv GleamMasterServer) {
-	s.RegisterService(&_GleamMaster_serviceDesc, srv)
+func RegisterGleamoldMasterServer(s *grpc.Server, srv GleamoldMasterServer) {
+	s.RegisterService(&_GleamoldMaster_serviceDesc, srv)
 }
 
-func _GleamMaster_GetResources_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _GleamoldMaster_GetResources_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ComputeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GleamMasterServer).GetResources(ctx, in)
+		return srv.(GleamoldMasterServer).GetResources(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.GleamMaster/GetResources",
+		FullMethod: "/pb.GleamoldMaster/GetResources",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GleamMasterServer).GetResources(ctx, req.(*ComputeRequest))
+		return srv.(GleamoldMasterServer).GetResources(ctx, req.(*ComputeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _GleamMaster_SendHeartbeat_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(GleamMasterServer).SendHeartbeat(&gleamMasterSendHeartbeatServer{stream})
+func _GleamoldMaster_SendHeartbeat_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(GleamoldMasterServer).SendHeartbeat(&gleamMasterSendHeartbeatServer{stream})
 }
 
-type GleamMaster_SendHeartbeatServer interface {
+type GleamoldMaster_SendHeartbeatServer interface {
 	SendAndClose(*Empty) error
 	Recv() (*Heartbeat, error)
 	grpc.ServerStream
@@ -1911,11 +1911,11 @@ func (x *gleamMasterSendHeartbeatServer) Recv() (*Heartbeat, error) {
 	return m, nil
 }
 
-func _GleamMaster_SendFlowExecutionStatus_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(GleamMasterServer).SendFlowExecutionStatus(&gleamMasterSendFlowExecutionStatusServer{stream})
+func _GleamoldMaster_SendFlowExecutionStatus_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(GleamoldMasterServer).SendFlowExecutionStatus(&gleamMasterSendFlowExecutionStatusServer{stream})
 }
 
-type GleamMaster_SendFlowExecutionStatusServer interface {
+type GleamoldMaster_SendFlowExecutionStatusServer interface {
 	SendAndClose(*Empty) error
 	Recv() (*FlowExecutionStatus, error)
 	grpc.ServerStream
@@ -1937,37 +1937,37 @@ func (x *gleamMasterSendFlowExecutionStatusServer) Recv() (*FlowExecutionStatus,
 	return m, nil
 }
 
-var _GleamMaster_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "pb.GleamMaster",
-	HandlerType: (*GleamMasterServer)(nil),
+var _GleamoldMaster_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "pb.GleamoldMaster",
+	HandlerType: (*GleamoldMasterServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "GetResources",
-			Handler:    _GleamMaster_GetResources_Handler,
+			Handler:    _GleamoldMaster_GetResources_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{
 		{
 			StreamName:    "SendHeartbeat",
-			Handler:       _GleamMaster_SendHeartbeat_Handler,
+			Handler:       _GleamoldMaster_SendHeartbeat_Handler,
 			ClientStreams: true,
 		},
 		{
 			StreamName:    "SendFlowExecutionStatus",
-			Handler:       _GleamMaster_SendFlowExecutionStatus_Handler,
+			Handler:       _GleamoldMaster_SendFlowExecutionStatus_Handler,
 			ClientStreams: true,
 		},
 	},
 	Metadata: "master_agent.proto",
 }
 
-// Client API for GleamAgent service
+// Client API for GleamoldAgent service
 
-type GleamAgentClient interface {
-	SendFileResource(ctx context.Context, opts ...grpc.CallOption) (GleamAgent_SendFileResourceClient, error)
-	Execute(ctx context.Context, in *ExecutionRequest, opts ...grpc.CallOption) (GleamAgent_ExecuteClient, error)
+type GleamoldAgentClient interface {
+	SendFileResource(ctx context.Context, opts ...grpc.CallOption) (GleamoldAgent_SendFileResourceClient, error)
+	Execute(ctx context.Context, in *ExecutionRequest, opts ...grpc.CallOption) (GleamoldAgent_ExecuteClient, error)
 	// collect execution stats from "gleamold execute" processes
-	CollectExecutionStatistics(ctx context.Context, opts ...grpc.CallOption) (GleamAgent_CollectExecutionStatisticsClient, error)
+	CollectExecutionStatistics(ctx context.Context, opts ...grpc.CallOption) (GleamoldAgent_CollectExecutionStatisticsClient, error)
 	Delete(ctx context.Context, in *DeleteDatasetShardRequest, opts ...grpc.CallOption) (*DeleteDatasetShardResponse, error)
 }
 
@@ -1975,12 +1975,12 @@ type gleamAgentClient struct {
 	cc *grpc.ClientConn
 }
 
-func NewGleamAgentClient(cc *grpc.ClientConn) GleamAgentClient {
+func NewGleamoldAgentClient(cc *grpc.ClientConn) GleamoldAgentClient {
 	return &gleamAgentClient{cc}
 }
 
-func (c *gleamAgentClient) SendFileResource(ctx context.Context, opts ...grpc.CallOption) (GleamAgent_SendFileResourceClient, error) {
-	stream, err := grpc.NewClientStream(ctx, &_GleamAgent_serviceDesc.Streams[0], c.cc, "/pb.GleamAgent/SendFileResource", opts...)
+func (c *gleamAgentClient) SendFileResource(ctx context.Context, opts ...grpc.CallOption) (GleamoldAgent_SendFileResourceClient, error) {
+	stream, err := grpc.NewClientStream(ctx, &_GleamoldAgent_serviceDesc.Streams[0], c.cc, "/pb.GleamoldAgent/SendFileResource", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1988,7 +1988,7 @@ func (c *gleamAgentClient) SendFileResource(ctx context.Context, opts ...grpc.Ca
 	return x, nil
 }
 
-type GleamAgent_SendFileResourceClient interface {
+type GleamoldAgent_SendFileResourceClient interface {
 	Send(*FileResourceRequest) error
 	Recv() (*FileResourceResponse, error)
 	grpc.ClientStream
@@ -2010,8 +2010,8 @@ func (x *gleamAgentSendFileResourceClient) Recv() (*FileResourceResponse, error)
 	return m, nil
 }
 
-func (c *gleamAgentClient) Execute(ctx context.Context, in *ExecutionRequest, opts ...grpc.CallOption) (GleamAgent_ExecuteClient, error) {
-	stream, err := grpc.NewClientStream(ctx, &_GleamAgent_serviceDesc.Streams[1], c.cc, "/pb.GleamAgent/Execute", opts...)
+func (c *gleamAgentClient) Execute(ctx context.Context, in *ExecutionRequest, opts ...grpc.CallOption) (GleamoldAgent_ExecuteClient, error) {
+	stream, err := grpc.NewClientStream(ctx, &_GleamoldAgent_serviceDesc.Streams[1], c.cc, "/pb.GleamoldAgent/Execute", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2025,7 +2025,7 @@ func (c *gleamAgentClient) Execute(ctx context.Context, in *ExecutionRequest, op
 	return x, nil
 }
 
-type GleamAgent_ExecuteClient interface {
+type GleamoldAgent_ExecuteClient interface {
 	Recv() (*ExecutionResponse, error)
 	grpc.ClientStream
 }
@@ -2042,8 +2042,8 @@ func (x *gleamAgentExecuteClient) Recv() (*ExecutionResponse, error) {
 	return m, nil
 }
 
-func (c *gleamAgentClient) CollectExecutionStatistics(ctx context.Context, opts ...grpc.CallOption) (GleamAgent_CollectExecutionStatisticsClient, error) {
-	stream, err := grpc.NewClientStream(ctx, &_GleamAgent_serviceDesc.Streams[2], c.cc, "/pb.GleamAgent/CollectExecutionStatistics", opts...)
+func (c *gleamAgentClient) CollectExecutionStatistics(ctx context.Context, opts ...grpc.CallOption) (GleamoldAgent_CollectExecutionStatisticsClient, error) {
+	stream, err := grpc.NewClientStream(ctx, &_GleamoldAgent_serviceDesc.Streams[2], c.cc, "/pb.GleamoldAgent/CollectExecutionStatistics", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2051,7 +2051,7 @@ func (c *gleamAgentClient) CollectExecutionStatistics(ctx context.Context, opts 
 	return x, nil
 }
 
-type GleamAgent_CollectExecutionStatisticsClient interface {
+type GleamoldAgent_CollectExecutionStatisticsClient interface {
 	Send(*ExecutionStat) error
 	CloseAndRecv() (*Empty, error)
 	grpc.ClientStream
@@ -2078,32 +2078,32 @@ func (x *gleamAgentCollectExecutionStatisticsClient) CloseAndRecv() (*Empty, err
 
 func (c *gleamAgentClient) Delete(ctx context.Context, in *DeleteDatasetShardRequest, opts ...grpc.CallOption) (*DeleteDatasetShardResponse, error) {
 	out := new(DeleteDatasetShardResponse)
-	err := grpc.Invoke(ctx, "/pb.GleamAgent/Delete", in, out, c.cc, opts...)
+	err := grpc.Invoke(ctx, "/pb.GleamoldAgent/Delete", in, out, c.cc, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// Server API for GleamAgent service
+// Server API for GleamoldAgent service
 
-type GleamAgentServer interface {
-	SendFileResource(GleamAgent_SendFileResourceServer) error
-	Execute(*ExecutionRequest, GleamAgent_ExecuteServer) error
+type GleamoldAgentServer interface {
+	SendFileResource(GleamoldAgent_SendFileResourceServer) error
+	Execute(*ExecutionRequest, GleamoldAgent_ExecuteServer) error
 	// collect execution stats from "gleamold execute" processes
-	CollectExecutionStatistics(GleamAgent_CollectExecutionStatisticsServer) error
+	CollectExecutionStatistics(GleamoldAgent_CollectExecutionStatisticsServer) error
 	Delete(context.Context, *DeleteDatasetShardRequest) (*DeleteDatasetShardResponse, error)
 }
 
-func RegisterGleamAgentServer(s *grpc.Server, srv GleamAgentServer) {
-	s.RegisterService(&_GleamAgent_serviceDesc, srv)
+func RegisterGleamoldAgentServer(s *grpc.Server, srv GleamoldAgentServer) {
+	s.RegisterService(&_GleamoldAgent_serviceDesc, srv)
 }
 
-func _GleamAgent_SendFileResource_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(GleamAgentServer).SendFileResource(&gleamAgentSendFileResourceServer{stream})
+func _GleamoldAgent_SendFileResource_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(GleamoldAgentServer).SendFileResource(&gleamAgentSendFileResourceServer{stream})
 }
 
-type GleamAgent_SendFileResourceServer interface {
+type GleamoldAgent_SendFileResourceServer interface {
 	Send(*FileResourceResponse) error
 	Recv() (*FileResourceRequest, error)
 	grpc.ServerStream
@@ -2125,15 +2125,15 @@ func (x *gleamAgentSendFileResourceServer) Recv() (*FileResourceRequest, error) 
 	return m, nil
 }
 
-func _GleamAgent_Execute_Handler(srv interface{}, stream grpc.ServerStream) error {
+func _GleamoldAgent_Execute_Handler(srv interface{}, stream grpc.ServerStream) error {
 	m := new(ExecutionRequest)
 	if err := stream.RecvMsg(m); err != nil {
 		return err
 	}
-	return srv.(GleamAgentServer).Execute(m, &gleamAgentExecuteServer{stream})
+	return srv.(GleamoldAgentServer).Execute(m, &gleamAgentExecuteServer{stream})
 }
 
-type GleamAgent_ExecuteServer interface {
+type GleamoldAgent_ExecuteServer interface {
 	Send(*ExecutionResponse) error
 	grpc.ServerStream
 }
@@ -2146,11 +2146,11 @@ func (x *gleamAgentExecuteServer) Send(m *ExecutionResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func _GleamAgent_CollectExecutionStatistics_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(GleamAgentServer).CollectExecutionStatistics(&gleamAgentCollectExecutionStatisticsServer{stream})
+func _GleamoldAgent_CollectExecutionStatistics_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(GleamoldAgentServer).CollectExecutionStatistics(&gleamAgentCollectExecutionStatisticsServer{stream})
 }
 
-type GleamAgent_CollectExecutionStatisticsServer interface {
+type GleamoldAgent_CollectExecutionStatisticsServer interface {
 	SendAndClose(*Empty) error
 	Recv() (*ExecutionStat, error)
 	grpc.ServerStream
@@ -2172,48 +2172,48 @@ func (x *gleamAgentCollectExecutionStatisticsServer) Recv() (*ExecutionStat, err
 	return m, nil
 }
 
-func _GleamAgent_Delete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _GleamoldAgent_Delete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteDatasetShardRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GleamAgentServer).Delete(ctx, in)
+		return srv.(GleamoldAgentServer).Delete(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.GleamAgent/Delete",
+		FullMethod: "/pb.GleamoldAgent/Delete",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GleamAgentServer).Delete(ctx, req.(*DeleteDatasetShardRequest))
+		return srv.(GleamoldAgentServer).Delete(ctx, req.(*DeleteDatasetShardRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _GleamAgent_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "pb.GleamAgent",
-	HandlerType: (*GleamAgentServer)(nil),
+var _GleamoldAgent_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "pb.GleamoldAgent",
+	HandlerType: (*GleamoldAgentServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Delete",
-			Handler:    _GleamAgent_Delete_Handler,
+			Handler:    _GleamoldAgent_Delete_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{
 		{
 			StreamName:    "SendFileResource",
-			Handler:       _GleamAgent_SendFileResource_Handler,
+			Handler:       _GleamoldAgent_SendFileResource_Handler,
 			ServerStreams: true,
 			ClientStreams: true,
 		},
 		{
 			StreamName:    "Execute",
-			Handler:       _GleamAgent_Execute_Handler,
+			Handler:       _GleamoldAgent_Execute_Handler,
 			ServerStreams: true,
 		},
 		{
 			StreamName:    "CollectExecutionStatistics",
-			Handler:       _GleamAgent_CollectExecutionStatistics_Handler,
+			Handler:       _GleamoldAgent_CollectExecutionStatistics_Handler,
 			ClientStreams: true,
 		},
 	},

@@ -29,7 +29,7 @@ func (as *AgentServer) doHeartbeat(sleepInterval time.Duration) error {
 	}
 	defer grpcConection.Close()
 
-	client := pb.NewGleamMasterClient(grpcConection)
+	client := pb.NewGleamoldMasterClient(grpcConection)
 
 	stream, err := client.SendHeartbeat(context.Background())
 	if err != nil {
@@ -59,7 +59,7 @@ func (as *AgentServer) doHeartbeat(sleepInterval time.Duration) error {
 
 }
 
-func (as *AgentServer) sendOneHeartbeat(stream pb.GleamMaster_SendHeartbeatClient) error {
+func (as *AgentServer) sendOneHeartbeat(stream pb.GleamoldMaster_SendHeartbeatClient) error {
 	beat := &pb.Heartbeat{
 		Location: &pb.Location{
 			DataCenter: *as.Option.DataCenter,

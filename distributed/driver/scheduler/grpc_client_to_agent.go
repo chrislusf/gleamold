@@ -14,7 +14,7 @@ import (
 	"google.golang.org/grpc"
 )
 
-func sendRelatedFile(ctx context.Context, client pb.GleamAgentClient, flowHashCode uint32, relatedFile resource.FileResource) error {
+func sendRelatedFile(ctx context.Context, client pb.GleamoldAgentClient, flowHashCode uint32, relatedFile resource.FileResource) error {
 	fh, err := resource.GenerateFileHash(relatedFile.FullPath)
 	if err != nil {
 		log.Printf("Failed2 to read %s: %v", relatedFile.FullPath, err)
@@ -94,7 +94,7 @@ func sendExecutionRequest(ctx context.Context,
 	executionStatus *pb.FlowExecutionStatus_TaskGroup_Execution,
 	server string, request *pb.ExecutionRequest) error {
 
-	return withClient(server, func(client pb.GleamAgentClient) error {
+	return withClient(server, func(client pb.GleamoldAgentClient) error {
 		log.Printf("%s %v> starting with %v MB memory...\n", server, request.InstructionSet.Name, request.GetResource().GetMemoryMb())
 		stream, err := client.Execute(ctx, request)
 		if err != nil {
@@ -137,7 +137,7 @@ func sendExecutionRequest(ctx context.Context,
 }
 
 func sendDeleteRequest(server string, request *pb.DeleteDatasetShardRequest) error {
-	return withClient(server, func(client pb.GleamAgentClient) error {
+	return withClient(server, func(client pb.GleamoldAgentClient) error {
 		_, err := client.Delete(context.Background(), request)
 		if err != nil {
 			log.Printf("%v.Delete(_) = _, %v", client, err)
@@ -146,7 +146,7 @@ func sendDeleteRequest(server string, request *pb.DeleteDatasetShardRequest) err
 	})
 }
 
-func withClient(server string, fn func(client pb.GleamAgentClient) error) error {
+func withClient(server string, fn func(client pb.GleamoldAgentClient) error) error {
 	grpcConection, err := grpc.Dial(server, grpc.WithInsecure())
 	if err != nil {
 		return fmt.Errorf("driver dial agent: %v", err)
@@ -155,7 +155,7 @@ func withClient(server string, fn func(client pb.GleamAgentClient) error) error 
 		// time.Sleep(50 * time.Millisecond)
 		grpcConection.Close()
 	}()
-	client := pb.NewGleamAgentClient(grpcConection)
+	client := pb.NewGleamoldAgentClient(grpcConection)
 
 	return fn(client)
 }

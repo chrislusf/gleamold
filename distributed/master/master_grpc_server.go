@@ -61,7 +61,7 @@ func (s *MasterServer) GetResources(ctx context.Context, in *pb.ComputeRequest) 
 
 }
 
-func (s *MasterServer) SendHeartbeat(stream pb.GleamMaster_SendHeartbeatServer) error {
+func (s *MasterServer) SendHeartbeat(stream pb.GleamoldMaster_SendHeartbeatServer) error {
 	var location *pb.Location
 	for {
 		heartbeat, err := stream.Recv()
@@ -87,7 +87,7 @@ func (s *MasterServer) SendHeartbeat(stream pb.GleamMaster_SendHeartbeatServer) 
 	}
 }
 
-func (s *MasterServer) SendFlowExecutionStatus(stream pb.GleamMaster_SendFlowExecutionStatusServer) error {
+func (s *MasterServer) SendFlowExecutionStatus(stream pb.GleamoldMaster_SendFlowExecutionStatusServer) error {
 	for {
 		status, err := stream.Recv()
 

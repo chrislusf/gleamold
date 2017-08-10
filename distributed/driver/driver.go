@@ -128,7 +128,7 @@ func (fcd *FlowDriver) reportStatus(ctx context.Context, wg *sync.WaitGroup, mas
 
 		wg.Done()
 	}()
-	client := pb.NewGleamMasterClient(grpcConection)
+	client := pb.NewGleamoldMasterClient(grpcConection)
 
 	stream, err := client.SendFlowExecutionStatus(ctx)
 	if err != nil {

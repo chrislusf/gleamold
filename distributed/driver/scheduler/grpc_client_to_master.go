@@ -15,7 +15,7 @@ func getResources(master string, request *pb.ComputeRequest) (*pb.AllocationResu
 		log.Printf("fail to dial %s: %v", master, err)
 	}
 	defer grpcConection.Close()
-	client := pb.NewGleamMasterClient(grpcConection)
+	client := pb.NewGleamoldMasterClient(grpcConection)
 
 	return client.GetResources(context.Background(), request)
 }

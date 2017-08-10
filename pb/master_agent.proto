@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package pb;
 
-service GleamMaster {
+service GleamoldMaster {
   rpc GetResources(ComputeRequest) returns (AllocationResult) {}
   rpc SendHeartbeat(stream Heartbeat) returns (Empty) {}
   rpc SendFlowExecutionStatus(stream FlowExecutionStatus) returns (Empty) {}
@@ -141,7 +141,7 @@ message FlowExecutionStatus {
 //////////////////////////////////////////////////
 
 
-service GleamAgent {
+service GleamoldAgent {
   rpc SendFileResource(stream FileResourceRequest) returns (stream FileResourceResponse) {}
   rpc Execute(ExecutionRequest) returns (stream ExecutionResponse) {}
   // collect execution stats from "gleamold execute" processes

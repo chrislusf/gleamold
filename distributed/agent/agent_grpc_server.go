@@ -23,11 +23,11 @@ var (
 
 func (as *AgentServer) serveGrpc(listener net.Listener) {
 	grpcServer := grpc.NewServer()
-	pb.RegisterGleamAgentServer(grpcServer, as)
+	pb.RegisterGleamoldAgentServer(grpcServer, as)
 	grpcServer.Serve(listener)
 }
 
-func (as *AgentServer) SendFileResource(stream pb.GleamAgent_SendFileResourceServer) error {
+func (as *AgentServer) SendFileResource(stream pb.GleamoldAgent_SendFileResourceServer) error {
 	as.receiveFileResourceLock.Lock()
 	defer as.receiveFileResourceLock.Unlock()
 
@@ -85,7 +85,7 @@ func (as *AgentServer) SendFileResource(stream pb.GleamAgent_SendFileResourceSer
 }
 
 // Execute executes a request and stream stdout and stderr back
-func (as *AgentServer) Execute(request *pb.ExecutionRequest, stream pb.GleamAgent_ExecuteServer) error {
+func (as *AgentServer) Execute(request *pb.ExecutionRequest, stream pb.GleamoldAgent_ExecuteServer) error {
 
 	dir := path.Join(*as.Option.Dir, fmt.Sprintf("%d", request.GetInstructionSet().GetFlowHashCode()), request.GetDir())
 	os.MkdirAll(dir, 0755)
@@ -112,7 +112,7 @@ func (as *AgentServer) Execute(request *pb.ExecutionRequest, stream pb.GleamAgen
 }
 
 // Collect stat from "gleamold execute" process
-func (as *AgentServer) CollectExecutionStatistics(stream pb.GleamAgent_CollectExecutionStatisticsServer) error {
+func (as *AgentServer) CollectExecutionStatistics(stream pb.GleamoldAgent_CollectExecutionStatisticsServer) error {
 	var statsChan chan *pb.ExecutionStat
 
 	for {

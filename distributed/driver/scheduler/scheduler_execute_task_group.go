@@ -88,7 +88,7 @@ func (s *Scheduler) ExecuteTaskGroup(ctx context.Context,
 		}
 
 		if len(relatedFiles) > 0 {
-			err := withClient(allocation.Location.URL(), func(client pb.GleamAgentClient) error {
+			err := withClient(allocation.Location.URL(), func(client pb.GleamoldAgentClient) error {
 				for _, relatedFile := range relatedFiles {
 					err := sendRelatedFile(ctx, client, fc.HashCode, relatedFile)
 					if err != nil {

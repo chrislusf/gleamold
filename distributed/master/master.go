@@ -33,7 +33,7 @@ func RunMaster(listenOn string, logDirectory string) {
 
 	// Create your protocol servers.
 	grpcS := grpc.NewServer()
-	pb.RegisterGleamMasterServer(grpcS, masterServer)
+	pb.RegisterGleamoldMasterServer(grpcS, masterServer)
 	reflection.Register(grpcS)
 
 	r := router.NewRouter()

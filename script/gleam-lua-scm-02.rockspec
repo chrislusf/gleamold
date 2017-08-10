@@ -6,12 +6,12 @@ source = {
 }
 
 description = {
-    summary = "Lua libraries to work with Gleam",
+    summary = "Lua libraries to work with Gleamold",
     homepage = "https://github.com/chrislusf/gleamold",
     license = "MIT/X11",
     maintainer = "Chris Lu <chris.lu@gmail.com>",
     detailed = [[
-Gleam-Lua a high-performance library for Gleam.
+Gleamold-Lua a high-performance library for Gleamold.
 It works with Luajit and Lua.
 ]]
 }
