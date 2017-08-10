@@ -1,0 +1,22 @@
+Taking adding InputSplitReader as example:
+
+1. Add these to master_agent.proto
+
+    message InputSplitReader {
+        required string inputType = 1;
+    }
+
+2. Add this to master_agent.proto
+
+    message Instruction {
+        ...
+        optional InputSplitReader inputSplitReader = 10;
+    }
+
+3. generate protobuf files
+
+    make
+
+
+4. in github.com/chrislusf/gleam/instruction
+	add an instruction following the Instruction interface.
